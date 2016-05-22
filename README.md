@@ -1,3 +1,24 @@
+CRM Aressy 2015 avec le Framework Silex
+==========================================
+
+A quoi sert le CRM Aressy ?
+----------------------------
+Le CRM Aressy est projet lancé interne par l'agence Aressy BtoB, qui à pour but de développer un web service pour la gestion de leurs clients ou plutôt de leurs futurs clients. Plus connu sous le nom de CRM: Customer Relationship Management, en anglais, soit en français « gestion de la relation client » ou « gestion des relations avec les clients » (GRC).
+
+Technologies :
+--------------
+Il est basé sur le Framework Silex et la structure de ce web service est conçu avec "CRUD Admin Generator" (plus de détails en-dessous)
+
+Fonctionnalité de base :
+-------------------------
+
+- Le CRM permet une connexion sécurisé et gére la gestion du multi-utilisateur (ADMIN_ROLE ou USER_ROLE)
+- Permet d'ajouter des nouveaux utilisateurs
+- Ajout/Lecture/Suppression/Modification des données relative aux clients
+- Envoyer un emails au clients
+- Des filtres avancés et perssonnalisé permettent de trié les clients
+
+
 CRUD Admin Generator
 ===================
 
