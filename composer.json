@@ -1,0 +1,28 @@
+{
+    "require": {
+        "swiftmailer/swiftmailer": "5.*@dev",
+        "symfony/security": "2.5.*@dev",
+        "php": ">=5.3.3",
+        "silex/silex": "1.2.*@dev",
+        "monolog/monolog": "~1.4,>=1.4.1",
+        "doctrine/dbal": "~2.2",
+        "doctrine/doctrine-bundle": "1.4.*@dev",
+        "symfony/console": "2.5.*",
+        "twig/twig": ">=1.8.0,<2.0-dev",
+        "symfony/twig-bridge": "2.5.*",
+        "symfony/form": "2.5.*@dev",
+        "symfony/validator": "2.5.*",
+        "symfony/config": "2.5.*",
+        "symfony/translation": "2.5.*@dev",
+        "symfony/locale": "2.5.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { 
+            "": "src/",
+            "App": "app/"
+            
+        }
+    }    
+}
+

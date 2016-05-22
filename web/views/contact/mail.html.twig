@@ -1,0 +1,74 @@
+{% extends 'ag_base/backend.html.twig' %}
+
+{% block container %}
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+
+        {% include 'menu.html.twig' with {'option': 'contact_edit'} %}
+
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">                
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Envoyer un email à <strong>{{ contact_info.email }}</strong>
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+                {% include 'ag_alerts.html.twig' %}
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        {{ form_start(form, {'method': 'POST'}) }}
+                            {{ form_errors(form) }}
+
+                            
+                            <!-- quick email widget -->
+              <div class="box box-info">
+                <div class="box-header">
+                  <i class="fa fa-envelope"></i>
+                  <h3 class="box-title">Quick Email</h3>
+                  <!-- tools box -->
+                  <!--<div class="pull-right box-tools">
+                    <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                  </div><!-- /. tools -->
+                </div>
+                <div class="box-body">
+                  <form action="#" method="post">
+                    <div class="form-group">
+                      {{ form_widget(form.email, { attr: { 'class': 'form-control', 'placeholder':'Email to: ' }}) }}
+                    </div>
+                    <div class="form-group">
+                       {{ form_widget(form.sujet, { attr: { 'class': 'form-control', 'placeholder':'Subject' }}) }}
+                     
+                    </div>
+                    <div>
+                      {{ form_widget(form.message, { attr: { 'class': 'form-control textarea', 'placeholder':'Message', 'style':'width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;' }}) }}
+                      <!--<textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>-->
+                    </div>
+                  </form>
+                </div>
+                    {{ form_rest(form) }}
+                <div class="box-footer clearfix">
+                  <button  type="submit" class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
+                </div>
+              </div>
+
+            {{ form_end(form) }}              
+                            
+                            
+                            
+
+
+                    </div>
+                </div>
+
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'ag_menu.html.twig' %}
+
+{% block menu %}
+
+
+    
+<li class="treeview {% if option is defined and (option == 'contact_list' or option == 'contact_create' or option == 'contact_edit') %}active{% endif %}">
+    <a href="#">
+        <i class="fa fa-users"></i>
+        <span>contact</span>
+        <i class="fa pull-right fa-angle-right"></i>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+        <li {% if option is defined and option == 'contact_mescontact_list' %}class="active"{% endif %}><a href="{{ path('contact_mescontact_list') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Mes contacts</a></li>
+        <li {% if option is defined and option == 'contact_list' %}class="active"{% endif %}><a href="{{ path('contact_list') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Tous les contacts</a></li>
+        <li {% if option is defined and option == 'contact_create' %}class="active"{% endif %}><a href="{{ path('contact_create') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Ajouter un contact</a></li>
+    </ul>
+</li>
+
+<li class="treeview {% if option is defined and (option == 'test_list' or option == 'test_create' or option == 'test_edit') %}active{% endif %}">
+    <a href="#">
+        <i class="fa fa-folder-o"></i>
+        <span>test</span>
+        <i class="fa pull-right fa-angle-right"></i>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+        <li {% if option is defined and option == 'test_list' %}class="active"{% endif %}><a href="{{ path('test_list') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> List</a></li>
+        <li {% if option is defined and option == 'test_create' %}class="active"{% endif %}><a href="{{ path('test_create') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Create</a></li>
+    </ul>
+</li>
+
+{% if app.userInfo.roles[0] is defined %}
+    {% if app.userInfo.roles[0] == "ROLE_ADMIN" %}
+
+    <li class="treeview {% if option is defined and (option == 'user_list' or option == 'user_create' or option == 'user_edit') %}active{% endif %}">
+        <a href="#">
+            <i class="fa fa-lock"></i>
+            <span>user</span>
+            <i class="fa pull-right fa-angle-right"></i>
+        </a>
+        <ul class="treeview-menu" style="display: none;">
+            <li {% if option is defined and option == 'user_list' %}class="active"{% endif %}><a href="{{ path('user_list') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> List</a></li>
+            <li {% if option is defined and option == 'user_create' %}class="active"{% endif %}><a href="{{ path('user_create') }}" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Create</a></li>
+        </ul>
+    </li>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
