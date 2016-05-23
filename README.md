@@ -5,11 +5,11 @@ A quoi sert le CRM Aressy ?
 ----------------------------
 Le CRM Aressy est projet lancé interne par l'agence Aressy BtoB, qui à pour but de développer un web service pour la gestion de leurs clients ou plutôt de leurs futurs clients. Plus connu sous le nom de CRM: Customer Relationship Management, en anglais, soit en français « gestion de la relation client » ou « gestion des relations avec les clients » (GRC).
 
-Technologies :
+Technologies 
 --------------
 Il est basé sur le Framework Silex et la structure de ce web service est conçu avec "CRUD Admin Generator" (plus de détails en-dessous)
 
-Fonctionnalité de base :
+Fonctionnalité de base 
 -------------------------
 
 - Le CRM permet une connexion sécurisé et gére la gestion du multi-utilisateur (ADMIN_ROLE ou USER_ROLE)
@@ -17,6 +17,54 @@ Fonctionnalité de base :
 - Ajout/Lecture/Suppression/Modification des données relative aux clients
 - Envoyer un emails au clients
 - Des filtres avancés et perssonnalisé permettent de trié les clients
+
+Installation 
+--------------
+
+Clonez le repository
+
+	git clone https://github.com/barathpoubady/crm_aressy_2015_silex.git crm_aressy_2015_silex
+	cd crm_aressy_2015_silex
+	
+Editer le fichier crm_aressy_2015_silex/src/app.php et ajouter vos données de connexion à partir de la ligne 68:
+
+$app->register(new DoctrineServiceProvider(), array(
+
+        'dbs.options' => array(
+            'db' => array(
+                'driver'   => 'pdo_mysql',
+                'dbname'   => 'crudadmin',
+                'host'     => 'localhost',
+                'user'     => 'root',
+                'password' => 'root',
+                'charset'  => 'utf8',
+            ),
+        )
+));
+
+Changer la ligne suivante:
+
+$app['asset_path'] = '/resources';
+Avec votre nom de domaine ou url du localhost, par exemple:
+
+$app['asset_path'] = 'http://domain.com/crm_aressy_2015_silex/web/resources';
+ou 
+$app['asset_path'] = 'http://localhost/crm_aressy_2015_silex/web/resources';
+
+Etape finale ajouter la base de donnée 'crudadmin.sql' dans votre base de donnée.
+
+Il ne vous reste plus que a vous connecter en vous rendent sur l'url suivante :
+
+http://VOTRE_DOMAINE/crm_aressy_2015_silex/web/index.php/
+
+et utiliser le login et mdp suivant pour vous connecter :
+
+id : TEST3
+mdp : password
+
+
+
+============================ FIN ===============================
 
 
 CRUD Admin Generator
